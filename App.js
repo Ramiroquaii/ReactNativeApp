@@ -16,7 +16,8 @@ export default function App() {
     Pacifico: require("./assets/Fonts/Pacifico-Regular.ttf"),
   });
 
-  if (fontsLoaded === false) {
+  //if (fontsLoaded === false) {
+  if (!fontsLoaded) {
     return;
   }
 
