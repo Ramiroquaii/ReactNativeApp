@@ -37,8 +37,8 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Inicio de Sesión</Text>
-      <AntDesign name="smile-circle" size={24} color="black" />
+      <Text style={styles.title}>Bienvenido !!</Text>
+      <AntDesign name="smile-circle" size={32} color="black" style={styles.icono} />
       <TextInput
         placeholder="Nombre de usuario"
         style={styles.input}
@@ -55,8 +55,9 @@ const Login = ({ navigation }) => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Iniciar Sesión</Text>
       </TouchableOpacity>
-      <Pressable onPress={() => navigation.navigate("register")}>
-        <Text style={styles.registroText}>No tienes cuenta? Registrate</Text>
+      <Pressable style={styles.registroPress} onPress={() => navigation.navigate("register")}>
+        <Text style={styles.registroText}>No tienes cuenta?</Text>
+        <Text style={styles.registroText}>Registrate...</Text>
       </Pressable>
     </View>
   );
@@ -68,14 +69,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  registroPress: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 15,
+  },
+  icono: {
+    marginBottom: 15,
   },
   input: {
     width: "85%",
     height: 50,
-    borderColor: colors.pink,
+    color: colors.orangeInputText,
+    borderColor: colors.blueInputLine,
     borderWidth: 2,
     borderRadius: 5,
     marginBottom: 20,
@@ -83,7 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   button: {
-    backgroundColor: colors.pink,
+    backgroundColor: colors.blueButton,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
